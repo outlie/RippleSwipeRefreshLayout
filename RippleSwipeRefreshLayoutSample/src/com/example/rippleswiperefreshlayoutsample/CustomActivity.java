@@ -3,10 +3,12 @@ package com.example.rippleswiperefreshlayoutsample;
 import com.makefun.RippleSwipeRefreshLayout;
 import com.makefun.RippleSwipeRefreshLayout.OnRefreshListener;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
@@ -17,7 +19,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class CustomActivity extends Activity implements OnRefreshListener, OnClickListener {
+public class CustomActivity extends ActionBarActivity implements OnRefreshListener, OnClickListener {
 	
 	private static final int LOAD_SUCCESS = 1;
 	
@@ -49,7 +51,19 @@ public class CustomActivity extends Activity implements OnRefreshListener, OnCli
 		initView();
 	}
 
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			this.finish();
+			break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+	
 	private void initView() {
+		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		setSupportActionBar(toolbar);
 		mRefreshLayout = (RippleSwipeRefreshLayout) findViewById(R.id.refreshLayout);
 		mRefreshLayout.setListener(this);
 		mProcess = findViewById(R.id.process);
