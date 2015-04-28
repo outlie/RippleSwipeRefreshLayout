@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <declare-styleable name="RippleSwipeRefreshLayout">
+        <attr name="rsr_circleIcon" format="reference"/>
+        <attr name="rsr_circleColor" format="color"/>
+    </declare-styleable>
+</resources>

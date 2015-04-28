@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="app_name">RippleSwipeRefreshLayoutSample</string>
+    <string name="basic">Basic</string>
+    <string name="custom">Custom</string>
+
+</resources>
